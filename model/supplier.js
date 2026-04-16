@@ -1,18 +1,15 @@
-import mongoose from "../config/connection.db.js";
+import mongoose from "../config/connection.db.js"
 
-// Sale Schema
-const saleSchema = new mongoose.Schema({
-  product: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Product",
-  },
-  quantity: Number,
-  price: Number,
-  date: {
-    type: Date,
-    default: Date.now,
-  },
+// Supplier Schema
+const supplierSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    contact: String,
+    email: String,
+    address: String
 });
 
 // Export Model
-export default mongoose.model("Sale", saleSchema);
+export default mongoose.model("Supplier", supplierSchema);
